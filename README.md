@@ -47,11 +47,11 @@ Feature Creation
 
 Creating features involves creating new variables which will be most useful in the predictive model. Three new features were created: shortest distance, height difference, and LULC type. It is necessary to create these features for the following reason: Shortest distance, height difference and LULC type add geospatial variables to the dataset.
 
-Shortest distance (that is, distance of each household to the nearest functional water point) was derived in ArcMap® from the raw coordinates of the households and water points. As shown in Figure 2, shortest distance was generated using the Near tool among the Analysis tools in the ArcToolbox. 
+Shortest distance (that is, distance of each household to the nearest functional water point) was derived in ArcMap® from the raw coordinates of the households and water points. Shortest distance was generated using the Near tool among the Analysis tools in the ArcToolbox. 
 
-Elevations of each household location and its nearest water point were extracted from Digital Elevation Model in ArcGIS ® using the Extract by Mask tool among the Extraction tools under the Spatial Analysis toolbox in the ArcToolbox (shown in Figure 3). The difference of the corresponding extracted elevations gives the height difference between each household location and its nearest water point. 
+Elevations of each household location and its nearest water point were extracted from Digital Elevation Model in ArcGIS ® using the Extract by Mask tool among the Extraction tools under the Spatial Analysis toolbox in the ArcToolbox. The difference of the corresponding extracted elevations gives the height difference between each household location and its nearest water point. 
 
-Land use land cover (LULC) type for each household location was generated from LULC map in ArcGIS® using the Extract Values to Point tool among the Extraction tools under the Spatial Analysis toolbox in the ArcToolbox. This is depicted in Figure 3. It is interesting to see that only two LULC types were in the study area – built area and bare ground.
+Land use land cover (LULC) type for each household location was generated from LULC map in ArcGIS® using the Extract Values to Point tool among the Extraction tools under the Spatial Analysis toolbox in the ArcToolbox. It is interesting to see that only two LULC types were in the study area – built area and bare ground.
 
 Volume of water consumed in litre per day for dry and wet season, represented by January and July respectively, were derived for each respondent. A dataset consisting of 1200 observations was derived for each season of the year, so that there is a dataset for dry season and another dataset for wet season. 
 
@@ -68,7 +68,7 @@ Results
 
 Selected Features
 
-Tables 10, 11, 12, 13 and 14, and Figure 5 show the results of experimenting with the five techniques. It is important to mention the scores that were considered for selecting the features in each technique. Pearson Correlation Coefficient acceptable scores are between -3.0 and -9.0 for negative correlation and +3.0 and +9.0 for positive correlation. Information Gain is zero if and only if two features are independent. The higher the feature score the higher the chance of being selected. Recursive Feature Elimination gives 1 or True for selected features, any other number is False and the feature will not be selected. LASSO identifies unselected features with 0 and any other number for selected features.
+It is important to mention the scores that were considered for selecting the features in each technique. Pearson Correlation Coefficient acceptable scores are between -3.0 and -9.0 for negative correlation and +3.0 and +9.0 for positive correlation. Information Gain is zero if and only if two features are independent. The higher the feature score the higher the chance of being selected. Recursive Feature Elimination gives 1 or True for selected features, any other number is False and the feature will not be selected. LASSO identifies unselected features with 0 and any other number for selected features.
 
 Each feature selection technique was applied to the datasets for dry season and wet season. The results show that PC selected five features – Household size (S), Travel time (t), Amount (A), Willingness to pay (W), and Shortest distance (d).  IG selected six features – Household income (I), Household size (S), Travel time (t), Amount (A), Willingness to pay (W), and Shortest distance (d). RFE selected seven features – household income (I), Rainfall (R), Ave Temp (T), Travel time (t), Amount (A), Willingness to pay (W), and Shortest distance (d). LASSO selected nine features – Household income (I), Household size (HS), Rainfall (R), Ave Temp (T), Travel time (t), Amount (A), Willingness to pay (W), Shortest distance (d) and Height diff (h). 
 
@@ -82,7 +82,7 @@ Thus, from the nine PCs extracted, it can be deduced that PCA selected the follo
 
 GSF Selected
 
-Table 16 highlight the number of GSF selected by the feature selection and extraction techniques. PC selected two GSF: Travel time and Shortest distance among the seven. IG selected two GSF: Travel time and Shortest distance. RFE selected two GSF: Travel time and Shortest distance. LASSO selected three GSF: Travel time, Shortest distance and Height difference. PCA also selected three GSF: Travel time, Shortest distance and height difference. Out of four GSF assessed, PC, IG and RFE selected two GSF each, and LASSO selected three GSF and PCA selected three GSF.
+ PC selected two GSF: Travel time and Shortest distance among the seven. IG selected two GSF: Travel time and Shortest distance. RFE selected two GSF: Travel time and Shortest distance. LASSO selected three GSF: Travel time, Shortest distance and Height difference. PCA also selected three GSF: Travel time, Shortest distance and height difference. Out of four GSF assessed, PC, IG and RFE selected two GSF each, and LASSO selected three GSF and PCA selected three GSF.
 
 The selected features are defined as explanatory variables, while Volume in litre per day (V) is defined as target variable. From the selected explanatory variables listed in Table 17, the functional relationships between Volume in litre per day (V) and selected variables are shown in Table 18. That is, volume of water consumed is a function of the variables in the equations. For example, result from Pearson Correlation shows that Volume is a function of Household size, Travel time, Amount spent, Willingness to pay and Shortest distance.
 
